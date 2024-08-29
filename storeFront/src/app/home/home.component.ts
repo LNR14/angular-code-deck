@@ -16,6 +16,9 @@ export class HomeComponent {
   constructor(private productService: ProductService) {}
 
   products: Product[] = [];
+  onProductOutput(product: Product) {
+    console.log(product);
+  }
 
   ngOnInit(): void {
     this.productService
