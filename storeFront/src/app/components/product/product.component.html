@@ -10,4 +10,22 @@
     [readonly]="true"
     iconCancelClass="hidden"
   />
+  <div class="row gap-05">
+    <button
+      pButton
+      icon="pi pi-pencil"
+      label="Edit Product"
+      (click)="editProduct()"
+    ></button>
+    <button
+      pButton
+      icon="pi pi-trash"
+      label="Delete Product"
+      class="p-button-danger"
+      (click)="confirmDelete()"
+      #deleteButton
+    ></button>
+  </div>
 </div>
+
+<p-confirmPopup></p-confirmPopup>
