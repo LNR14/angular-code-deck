@@ -64,6 +64,10 @@ export class HomeComponent {
     this.fetchProducts(event.page, event.rows);
   }
 
+  resetpaginator() {
+    this.paginator?.changePage(0);
+  }
+
   onConfirmEdit(product: Product) {
     this.displayEditPopUp = true;
     this.editProduct(product, this.selectedProduct.id ?? 0);
@@ -94,10 +98,11 @@ export class HomeComponent {
       .subscribe({
         next: (data) => {
           console.log(data);
+          this.fetchProducts(0, this.rows);
+          this.resetpaginator();
         },
         error: (error) => {
           console.log(error);
-          this.fetchProducts(0, this.rows);
         },
       });
   }
